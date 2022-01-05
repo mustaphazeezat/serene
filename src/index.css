@@ -1,0 +1,93 @@
+@font-face {
+   font-family: "Sailec-Bold";
+   src: url("fonts/Sailec-Bold.ttf") format("truetype");
+   font-style: normal;
+   font-weight: 700;
+   font-display: fallback;
+}
+    
+@font-face {
+   font-family: "Sailec-Medium";
+   src: url("fonts/Sailec-Medium.ttf") format("truetype");
+   font-style: normal;
+   font-weight: 500;
+   font-display: fallback
+}
+
+@font-face {
+   font-family: "Sailec-Regular";
+   src: url("fonts/Sailec.ttf") format("truetype");
+   font-style: normal;
+   font-weight: 400;
+   font-display: fallback;
+}
+
+*, *::before, *::after {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   box-sizing: border-box
+}
+
+html{
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  font-family: "Sailec-Regular", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+p{
+    font-family: inherit;
+  }
+
+h2,h3,h4{
+    font-family: "Sailec-Medium", sans-serif;
+  }
+
+button, a{
+    outline: none;
+    border: none;
+    background: transparent;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: "Sailec-Medium", sans-serif;
+    line-height: 1;
+  }
+button::first-letter, a::first-letter{
+    text-transform: uppercase;
+  }
+input,textarea{
+   outline: none;
+   border: none;
+   font-family: 'Oswald', sans-serif;
+   background: transparent;
+  }
+  input::placeholder, textarea::placeholder {
+      font-family: 'Oswald', sans-serif;
+  }
+    
+ul{
+   list-style: none;
+  }
+img{
+   object-fit: cover;
+   width: 100%;
+   height: 100%;
+  }
+svg{
+   color: inherit;
+   vertical-align: middle;
+  }
+   
+select{
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+   background-color: transparent;
+  }
+
