@@ -11,7 +11,7 @@ const Hero = () => {
                     <p>Experience tasty and fresh food every time.</p>
                     <div className='d-flx-alc action-wrapper'>
                         <Link to='/menu' className='main-btn'>menu</Link>
-                        <Link to='/reservations' className='main-btn white-bg'>make reservation</Link>
+                        <Link to='/reservations/new-reservations' className='main-btn white-bg'>make reservation</Link>
                     </div>
                 </div>
                 <div className='image-container'>

@@ -13,7 +13,7 @@ const Form = () => {
     const [time, setTime] = useState('')
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState('')
-    const [success, setSuccess] = useState(false)
+    const [success, setSuccess] = useState(true)
     const [allReservations, setAllReservations] = useState([])
 
     useEffect(() => {
@@ -27,6 +27,8 @@ const Form = () => {
 
         }
         getAllReservations()
+        
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     const onChangeDate = (date) =>{
@@ -53,7 +55,7 @@ const Form = () => {
                 family: false,
                 privateFamily: false,
                 createdAt: Timestamp.now()
-                }
+            }
             await createReservation(details)
             setSuccess(true)
             setLoading(false)
@@ -93,12 +95,12 @@ const Form = () => {
                         </button>
                     </div>
                 </form>
-                <p className='information'>To make <span>specific</span> reservations, click <Link to='/reservations'>Here</Link></p>
+                <p className='information'>To make specific reservations, click <Link to='/reservations/new-reservations'>Here</Link></p>
                     </React.Fragment>:
                 <div className='success-msg'>
                     <h3>Heey</h3>
                     <p>You have successfully booked a place at Serene on <span>{date.toDateString()} </span> for <span> {time}</span>.</p>
-                    <p>Make changes to your reservations <Link to='/reservations'>here</Link> </p>
+                    <p>Make changes to your reservations <Link to='/reservations/update-reservations'>here</Link> </p>
                 </div>
                 }
             </div>

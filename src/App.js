@@ -19,7 +19,7 @@ function App() {
               <Route exact path="/" element={<Home />} />
               <Route  path="/menu" element={<Menu />} />
               <Route  path="/contact-us" element={<Contact />} />
-              <Route path="/resevations" element={<Reservation />} />
+              <Route path="/reservations/:id" element={<Reservation />} />
 
           </Routes>
         </Layout>

@@ -11,14 +11,14 @@ const Header = () => {
                </div>
                 <nav className={`navigation ${activeNav? "active": ''}`}>
                     <ul className='nav-list'>
-                        <li className='nav-item'><NavLink activeClassName="active" to='/'>Home</NavLink></li>
-                        <li className='nav-item'><NavLink activeClassName="active"  to='/menu'>Menu</NavLink></li>
-                        <li className='nav-item'><NavLink activeClassName="active" to='/contact-us'>Contact us</NavLink></li>
+                        <li className='nav-item'><NavLink className={(navData) => (navData.isActive ? "active" : 'none')} to='/'>Home</NavLink></li>
+                        <li className='nav-item'><NavLink className={(navData) => (navData.isActive ? "active" : 'none')}  to='/menu'>Menu</NavLink></li>
+                        <li className='nav-item'><NavLink className={(navData) => (navData.isActive ? "active" : 'none')} to='/contact-us'>Contact us</NavLink></li>
                     </ul>
                 </nav>
                 
                 <div className='reservation-link d-flx-alc-jfe'>
-                    <NavLink activeClassName="active" to='/reservations'>Reservations</NavLink>
+                    <NavLink className={(navData) => (navData.isActive ? "active" : 'none')} to='/reservations/new-reservations'>Reservations</NavLink>
                     <button className={`mobile-toggler ${activeNav? "show-mobile": ''}`} onClick={()=>setActiveNav(activeNav=>!activeNav)}> 
                         <span></span>
                     </button>
