@@ -1,0 +1,109 @@
+.header-wrapper
+    width: 100%
+    display: flex
+    align-items: center
+    justify-content: space-between
+    a
+        position: relative
+        display: block
+        padding: 1.5rem 2rem
+        font-family: $ff-medium
+        @media #{ $tablet }
+            padding: 3rem 1.5rem
+            padding-bottom: 2rem
+        @media #{ $laptop }
+            padding: 3rem 2rem
+            padding-bottom: 2rem
+        &.active
+            color: $red
+   
+.logo-holder
+    @media #{ $tablet }
+        flex: 1
+    a
+        font-family: 'Fredericka the Great', cursive
+        font-weight: 400
+        font-size: 3rem
+        color: $black
+        padding-left: 0
+        @media #{ $tablet }
+            font-size: 4rem
+        span
+            color: $red
+.navigation
+    position: absolute
+    transform: translateY(-100%)
+    left: 0
+    width: 100%
+    background: $lightgrey
+    transition: transform 0.3s ease-in-out
+    z-index: 2
+    @media #{ $tablet }
+        display: block
+        position: relative
+        flex: 1
+        transform: translateY(0)
+        top: 0
+    &.active
+        display: block
+        transform: translateY(0)
+        top: 50px
+        @media #{ $tablet }
+            top: 0
+.nav-list
+    @media #{ $tablet }
+        display: flex
+        align-items: center
+        justify-content: center
+        white-space: nowrap
+.reservation-link
+    @media #{ $tablet }
+        flex: 1
+    a
+        background: $red
+        color: #fff
+        border-radius: $br * 30
+        padding: 1.3rem 2rem
+        // padding-top: 2rem
+    
+.mobile-toggler
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: center
+    margin-left: 1rem
+    width: 25px
+    height: 20px
+    z-index: 5
+    @media #{ $tablet }
+        display: none
+    span
+        background: #000
+        width: 24px
+        height: 2px
+        border-radius: 100px
+    
+    &::before, &::after
+        content: ""
+        position: absolute
+        background: #000
+        border-radius: 100px
+        width: 24px
+        height: 2px
+        left: 1px
+        transition: transform 0.3s ease-in-out
+    &::before
+        top: 2px
+    &::after
+        bottom: 2px
+    &.show-mobile
+        span
+            display: none
+        &::before, &::after
+            transform-origin: 0
+        &::before
+            transform: rotate(50deg)
+            top: 0
+        &::after
+            transform: rotate(-50deg)
+            bottom: 0
