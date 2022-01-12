@@ -230,7 +230,7 @@ const UpdateForm = ({reservation, allReservations}) => {
                         }
                         <div className='d-flx-alc-jc'>
                             <button type='submit' className='submit-btn'>
-                                submit
+                                {loading? 'Updating...': 'Update reservation'}
                             </button>
                         </div>
                 </form>

@@ -1,6 +1,6 @@
 
 import React, { createContext, useContext } from 'react'
-import { getDocs, collect, setDoc, doc, collection, addDoc, query, where, orderBy, updateDoc, deleteDoc} from "firebase/firestore";
+import { getDocs, doc, collection, addDoc, query, where, orderBy, updateDoc, deleteDoc} from "firebase/firestore";
 import { db } from '../firebase'
 
 const ReservationContext = createContext()
