@@ -228,7 +228,6 @@ const UpdateForm = ({reservation, allReservations}) => {
                                 </div>
                             </div>: null
                         }
-                        
                         <div className='d-flx-alc-jc'>
                             <button type='submit' className='submit-btn'>
                                 submit
