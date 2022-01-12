@@ -13,10 +13,35 @@
         max-width: 400px
     @media #{ $llaptop }
         max-width: 500px
-    h2
-        font-family: $ff-body
+    &.alt
+        @media #{ $tablet }
+            margin: 0 auto
+            max-width: 500px
+        @media #{ $slaptop }
+            max-width: 600px
+    &.update-wrapper
+        width: 100%
+        max-width: 100%
+        box-shadow: none
+        max-height: 85vh
+        overflow: auto
+        .reserv-form
+            padding: 0
+            
+    h2,h3
+        font-family: $ff-medium
         font-size: 2rem
+        font-weight: 500
         margin-bottom: 2rem
+    h3
+        text-align: center
+        margin-bottom: 3rem
+    .reserv-form
+        box-shadow: none
+        padding-top: 0
+    .reserve-form
+        .input-wrapper
+            margin-top: 2rem
     .error
         margin-bottom: 1rem
     .success-msg
@@ -36,10 +61,11 @@
         p
             font-size: 1.5rem
             margin-bottom: 2rem
-        a
+            span
+                font-family: $ff-bold
+        a,button
             color: $red
-    .input-wrapper
-        margin-top: 2rem
+    
     .information
         margin-top: 2rem
         font-size: $font-14
@@ -120,17 +146,26 @@
 .reserv-form
     max-width: 650px
     margin: 0 auto
-    padding: 4rem 3rem
+    padding: 4rem 1rem
     background: #fff
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px
     border-radius: $br * 3
+    @media #{ $tablet }
+        padding: 4rem 2rem
+    @media #{ $laptop }
+        padding: 4rem 3rem
     .date-wrapper
         margin-bottom: 3rem
     .submit-btn
-        min-width: 300px
+        min-width: 100%
         font-family: $ff-bold
+        @media #{ $tablet }
+            min-width: 300px
     .error 
         margin-bottom: 3rem
+    &.alt
+        .submit-btn
+            margin-top: 0
 
         
         

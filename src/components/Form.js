@@ -13,7 +13,7 @@ const Form = () => {
     const [time, setTime] = useState('')
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState('')
-    const [success, setSuccess] = useState(true)
+    const [success, setSuccess] = useState(false)
     const [allReservations, setAllReservations] = useState([])
 
     useEffect(() => {
@@ -48,12 +48,14 @@ const Form = () => {
             setError('')
             setLoading(true)
             const details = {
+                name: '',
                 email: email,
-                date: date.toDateString(),
+                phoneNumber: '',
+                date: date.toISOString(),
                 time: time,
                 table: 0,
-                family: false,
-                privateFamily: false,
+                familyType: '',
+                familyTime: '',
                 createdAt: Timestamp.now()
             }
             await createReservation(details)
@@ -67,41 +69,42 @@ const Form = () => {
         <section className='main-wrapper-x main-wrapper-y'>
             <div className='form-wrapper'>
                 {
-                    !success ? <React.Fragment>
-                    <h2>Reserve a space</h2>
-                {
-                    error.length > 0 ? <p className='error'>{error}</p>: null
-                }
-                <form className='reserve-form' onSubmit={makeReservation}>
-                    <div className='width-1-2'>
-                        <Dates 
-                            onChange={onChangeDate}
-                            value={date}
-                        />
-                        <Time
-                            onChange={onChangeTime}
-                            value={time}
-                        />
-                    </div>
-                    <Input
-                        type="email" 
-                        label="email" 
-                        value={email}
-                        onChange={val=>setEmail(val)}
-                     />
-                    <div className='d-flx-alc-jfe'>
-                        <button className='submit-btn' type='submit'>
-                            {loading? 'making reservation...' : 'reserve a space'}
-                        </button>
-                    </div>
-                </form>
-                <p className='information'>To make specific reservations, click <Link to='/reservations/new-reservations'>Here</Link></p>
-                    </React.Fragment>:
-                <div className='success-msg'>
-                    <h3>Heey</h3>
-                    <p>You have successfully booked a place at Serene on <span>{date.toDateString()} </span> for <span> {time}</span>.</p>
-                    <p>Make changes to your reservations <Link to='/reservations/update-reservations'>here</Link> </p>
-                </div>
+                    !success ? 
+                        <React.Fragment>
+                            <h2>Reserve a space</h2>
+                            {
+                                error.length > 0 ? <p className='error'>{error}</p>: null
+                            }
+                            <form className='reserve-form' onSubmit={makeReservation}>
+                                <div className='width-1-2'>
+                                    <Dates 
+                                        onChange={onChangeDate}
+                                        value={date}
+                                    />
+                                    <Time
+                                        onChange={onChangeTime}
+                                        value={time}
+                                    />
+                                </div>
+                                <Input
+                                    type="email" 
+                                    label="email" 
+                                    value={email}
+                                    onChange={val=>setEmail(val)}
+                                />
+                                <div className='d-flx-alc-jfe'>
+                                    <button className='submit-btn' type='submit'>
+                                        {loading? 'making reservation...' : 'reserve a space'}
+                                    </button>
+                                </div>
+                            </form>
+                            <p className='information'>To make specific reservations, click <Link to='/reservations/new-reservations'>Here</Link></p>
+                        </React.Fragment>:
+                        <div className='success-msg'>
+                            <h3>Heey</h3>
+                            <p>You have successfully booked a place at Serene on <span>{date.toDateString()} </span> for <span> {time}</span>.</p>
+                            <p>Make changes to your reservations <Link to='/reservations/update-reservations'>here</Link> </p>
+                        </div>
                 }
             </div>
         </section>
