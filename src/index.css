@@ -91,6 +91,8 @@ img{
 svg{
    color: inherit;
    vertical-align: middle;
+   width: 20px;
+   height: 20px;
   }
    
 select{
