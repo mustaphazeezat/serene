@@ -23,14 +23,12 @@ const UpdateReservation = () => {
             if (data.length === 0) {
                 setError('You did not book any reservations with this email.')
                 setloading(false)
-                console.log('i run 1')
             } else {
                 setmyReservations(data) 
                 setloading(false)
             }
             
         } catch (error) {
-            console.log(error)
             setError(error)
             setloading(false)
         }

@@ -42,7 +42,6 @@ const UpdateForm = ({reservation, allReservations}) => {
         
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
-    console.log(new Date(reservation.date).getTime())
     const onChangeTable = (e) =>{
         setTables(e.target.value)
         
