@@ -3,7 +3,7 @@ import React from 'react'
 const Menu = () => {
     return (
         <div>
-            menu
+            <h2>Under construction</h2>
         </div>
     )
 }

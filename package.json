@@ -2,10 +2,6 @@
   "name": "heavenly",
   "version": "0.1.0",
   "private": true,
-  "engines": {
-    "npm": "8.1.0",
-    "node": "16.13.0"
-  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
@@ -22,16 +18,14 @@
     "react-scripts": "5.0.0",
     "react-tabs": "^3.2.3",
     "react-time-picker": "^4.4.4",
-    "sass": "^1.45.2",
+    "sass": "^1.63.6",
     "web-vitals": "^2.1.2"
   },
   "scripts": {
-    "dev": "react-scripts start",
-    "start": "serve -s build",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "heroku-postbuild": "yarn build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
